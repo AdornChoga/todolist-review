@@ -27,6 +27,10 @@ input.addEventListener('keyup', (event) => {
   }
 });
 
+const changeCursor = (e,type) => {
+  e.target.style.cursor = type;
+} 
+
 add.addEventListener('click', addTask);
 
 listContainer.addEventListener('click', (event) => {
@@ -67,13 +71,13 @@ listContainer.addEventListener('click', (event) => {
 
 listContainer.addEventListener('mouseover', (event) => {
   if (event.target.classList.contains('option')) {
-    event.target.style.cursor = 'all-scroll';
+    changeCursor(event,'all-scroll')
   }
   if (event.target.classList.contains('delete')) {
-    event.target.style.cursor = 'pointer';
+    changeCursor(event,'pointer')
   }
   if (event.target.classList.contains('save')) {
-    event.target.style.cursor = 'pointer';
+    changeCursor(event,'pointer')
   }
 });
 
@@ -96,10 +100,10 @@ clear.addEventListener('click', () => {
   loadTasks();
 });
 
-clear.addEventListener('mouseover', () => {
-  clear.style.cursor = 'pointer';
+clear.addEventListener('mouseover', (event) => {
+  changeCursor(event,'pointer')
 });
 
-refresh.addEventListener('mouseover', () => {
-  refresh.style.cursor = 'pointer';
+refresh.addEventListener('mouseover', (event) => {
+  changeCursor(event,'pointer')
 });
