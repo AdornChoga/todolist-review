@@ -1,9 +1,8 @@
 import tasksData from './local_data.js';
 import { listContainer, loadTasks } from './load.js';
 
-const taskToAdd = document.querySelector('#add');
-
 const addTask = () => {
+  const taskToAdd = document.querySelector('#add');
   const tasks = tasksData.fetchData();
   if (taskToAdd.value !== '') {
     const todo = { description: taskToAdd.value, completed: false, id: tasks.length };
